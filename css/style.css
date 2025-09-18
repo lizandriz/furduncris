@@ -1,0 +1,310 @@
+/* Basic reset */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Page base */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom right, #2C3E64, #5B7DB1, #888888);
+  color: #F5F5F5;
+  text-align: center;
+  min-height: 100vh; 
+}
+
+/* Header */
+.site-header {
+  padding: 48px 20px 28px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0));
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Glitter text effect for the title */
+.header-inner h1 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 300% 100%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: glitter 6s linear infinite;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+
+/* subtitle */
+.header-inner p {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  color: rgba(245,245,245,0.95);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Animated gradient movement */
+@keyframes glitter {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Main image container */
+.img-container {
+  position: relative;
+  max-width: 1100px; 
+  margin: 40px auto 80px; 
+  width: 92%;
+  border-radius: 20px;
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.03);
+}
+
+/* Responsive image */
+.img-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Botão centralizado com degradê */
+.img-container .btn-custom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: #fff;
+
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 0;
+
+  /* Degradê no botão */
+  background: linear-gradient(135deg, #ff66cc, #ffcc66);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Hover para o botão */
+.img-container .btn-custom:hover,
+.img-container .btn-custom:focus {
+  background: linear-gradient(135deg, #ffcc66, #ff66cc);
+  color: #000;
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  outline: none;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .header-inner h1 { font-size: 2rem; }
+  .header-inner p { font-size: 0.95rem; }
+  .img-container { margin: 24px auto 48px; width: 96%; }
+  .img-container .btn-custom { padding: 10px 18px; font-size: 0.95rem; }
+}
+
+/* ========================= */
+/* Estilo para a página Detalhes */
+/* ========================= */
+
+.rules-section {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 800px;
+  font-family: 'Orbitron', sans-serif; /* já combina com o resto */
+  color: #111; /* texto preto para contraste */
+}
+
+.rules-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #000; /* preto forte */
+}
+
+.rules-section p {
+  font-size: 1.1rem;
+  margin: 15px 0;
+  color: #111;
+  line-height: 1.6;
+}
+
+.rules-section ol {
+  list-style: decimal;
+  margin: 25px auto;
+  padding: 0;
+  text-align: left;
+  max-width: 600px;
+}
+
+.rules-section li {
+  font-size: 1.2rem;
+  margin: 12px 0;
+  color: #000;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
+
+
+/* Neon prata suave para os itens da lista */
+.neon-silver {
+  color: #ccc;
+  text-shadow: 0 0 6px #fff, 0 0 12px #aaa;
+  animation: silverPulse 3.5s infinite alternate ease-in-out;
+}
+
+@keyframes silverPulse {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 6px #fff, 0 0 12px #aaa, 0 0 20px #999;
+  }
+  50% {
+    opacity: 0.7;
+    text-shadow: 0 0 3px #ddd, 0 0 8px #aaa;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #fff, 0 0 12px #aaa, 0 0 20px #999;
+  }
+}
+
+
+.gif {
+  position: fixed;
+  width: 80px; /* pode ajustar o tamanho */
+  height: auto;
+  z-index: 10;
+}
+
+/* Canto superior esquerdo */
+.canto-esquerdo {
+  top: 10px;
+  left: 10px;
+}
+
+/* Canto superior direito */
+.canto-direito {
+  top: 10px;
+  right: 10px;
+}
+
+/* Canto inferior esquerdo */
+.canto-inferior-esquerdo {
+  bottom: 10px;
+  left: 10px;
+}
+
+/* Rodapé centralizado */
+.rodape-centro {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.gif-canto-direito {
+  position: fixed;   /* fixa na tela mesmo se rolar */
+  bottom: 10px;      /* distância do fundo */
+  right: 10px;       /* distância da direita */
+  width: 120px;      /* ajusta o tamanho se quiser */
+  z-index: 1000;     /* fica por cima do conteúdo */
+}
+
+.gif-canto-esquerdo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 100px; /* ajuste se quiser maior/menor */
+  z-index: 1000;
+}
+
+.gif-canto-direito-baixo {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 120px; /* ajuste se quiser maior/menor */
+  z-index: 1000;
+}
+
+.rules-section li {
+  font-size: 1.2rem;
+  margin: 12px 0;
+  color: #000; /* fonte preta */
+  font-weight: 510;
+  position: relative;
+  text-shadow: 
+    0 0 6px #1e90ff,
+    0 0 12px #1e90ff,
+    0 0 20px #1e90ff;
+  animation: neonPulse 2s infinite alternate ease-in-out;
+}
+
+/* Animação do brilho piscando */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 
+      0 0 4px #1e90ff,
+      0 0 8px #1e90ff,
+      0 0 12px #1e90ff;
+  }
+  100% {
+    text-shadow: 
+      0 0 8px #1e90ff,
+      0 0 16px #1e90ff,
+      0 0 24px #1e90ff;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .gif, .gif-canto-direito, .gif-canto-esquerdo, .gif-canto-direito-baixo {
+    width: 60px;   /* reduzido no mobile */
+  }
+}
+@media (max-width: 480px) {
+  .gif, .gif-canto-direito, .gif-canto-esquerdo, .gif-canto-direito-baixo {
+    width: 45px;   /* bem pequeno em celulares */
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px; /* espaço pro Clippy embaixo */
+    padding-top: 50px;   /* espaço pros GIFs de cima */
+  }
+}
+
+
+@media (max-width: 600px) {
+  .rules-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .rules-section p {
+    font-size: 1rem;
+  }
+
+  .rules-section li {
+    font-size: 1rem;
+  }
+}
+
+.gif:active {
+  transform: scale(1.2) rotate(5deg);
+  transition: transform 0.2s ease;
+}
